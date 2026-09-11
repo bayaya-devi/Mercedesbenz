@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Découvrez trois modèles emblématiques Mercedes-Benz dans une expérience élégante et immersive." />
+    <meta name="theme-color" content="#050505" />
+    <title>Mercedes-Benz — L'excellence en mouvement</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <a class="brand" href="#top" aria-label="Accueil Mercedes-Benz">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>Mercedes-Benz</span>
+      </a>
+      <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">Menu</button>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="#modeles">Modèles</a>
+        <a href="#vision">Notre vision</a>
+        <a class="nav-cta" href="#contact">Nous contacter</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal">
+          <p class="eyebrow">Mercedes-Benz</p>
+          <h1 id="hero-title">L'excellence<br /><em>en mouvement.</em></h1>
+          <p class="hero-copy">Trois visions du luxe automobile. Une même exigence de design, de confort et d'innovation.</p>
+          <a class="primary-button" href="#modeles">Découvrir les modèles <span aria-hidden="true">↘</span></a>
+        </div>
+        <div class="hero-footer" aria-hidden="true">
+          <span>01 — 03</span><span class="hero-line"></span><span>Explorez</span>
+        </div>
+      </section>
+
+      <section class="intro" id="vision">
+        <p class="section-number">01 / Notre vision</p>
+        <div>
+          <h2>Quand la technologie<br />devient une <em>émotion.</em></h2>
+          <p>Des lignes sculptées, un habitacle pensé dans les moindres détails et une conduite intuitive : chaque Mercedes-Benz transforme le trajet en expérience.</p>
+        </div>
+      </section>
+
+      <section class="models" id="modeles" aria-labelledby="models-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-number">02 / La sélection</p>
+            <h2 id="models-title">Trois caractères.<br />Une signature.</h2>
+          </div>
+          <p>Berline, SUV ou électrique : choisissez la Mercedes-Benz qui correspond à votre façon d'avancer.</p>
+        </div>
+
+        <article class="model-card model-c">
+          <div class="model-index">01</div>
+          <div class="model-content">
+            <p class="model-type">Berline · Élégance</p>
+            <h3>Classe C</h3>
+            <p>Une berline raffinée qui associe dynamisme, confort et technologies intuitives au quotidien.</p>
+            <ul aria-label="Points forts de la Classe C"><li>Design athlétique</li><li>Habitacle digital</li><li>Confort premium</li></ul>
+          </div>
+          <div class="model-letter" aria-hidden="true">C</div>
+        </article>
+
+        <article class="model-card model-glc">
+          <div class="model-index">02</div>
+          <div class="model-content">
+            <p class="model-type">SUV · Polyvalence</p>
+            <h3>GLC</h3>
+            <p>Une présence affirmée, un espace généreux et une polyvalence pensée pour toutes vos destinations.</p>
+            <ul aria-label="Points forts du GLC"><li>Silhouette expressive</li><li>Espace généreux</li><li>Conduite sereine</li></ul>
+          </div>
+          <div class="model-letter" aria-hidden="true">G</div>
+        </article>
+
+        <article class="model-card model-eqe">
+          <div class="model-index">03</div>
+          <div class="model-content">
+            <p class="model-type">Électrique · Innovation</p>
+            <h3>EQE</h3>
+            <p>Le luxe électrique dans une silhouette fluide, silencieuse et résolument tournée vers demain.</p>
+            <ul aria-label="Points forts de l'EQE"><li>Propulsion électrique</li><li>Design aérodynamique</li><li>Univers connecté</li></ul>
+          </div>
+          <div class="model-letter" aria-hidden="true">E</div>
+        </article>
+      </section>
+
+      <section class="quote" aria-label="Philosophie">
+        <p>« Le meilleur, sinon rien. »</p>
+        <span>Une philosophie qui traverse les générations.</span>
+      </section>
+
+      <section class="contact" id="contact">
+        <p class="section-number">03 / Prochaine étape</p>
+        <h2>Quel modèle vous<br /><em>ressemble ?</em></h2>
+        <a class="primary-button light" href="mailto:contact@example.com">Prendre contact <span aria-hidden="true">→</span></a>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">✦</span><span>Mercedes-Benz</span></a>
+      <p>Site de présentation indépendant — 2026</p>
+      <a href="#top">Retour en haut ↑</a>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
