@@ -1,1 +1,1 @@
-window.SUPABASE_CONFIG={url:'https://ubyepubvohcdcytqowje.supabase.co',publicKey:'',adminUsername:'SaadBarki',adminEmail:'saadbarki@etoile-moteur.local'};
+window.SUPABASE_CONFIG={url:'https://ubyepubvohcdcytqowje.supabase.co',publicKey:'sb_publishable_Og-agUKezhaPI5zjSS3Vzg_iYT_D7Ur',adminUsername:'SaadBarki',adminEmail:'saadbarki@etoile-moteur.local'};
