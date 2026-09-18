@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - ".github/workflows/android-apk.yml"
 
 jobs:
   build:
@@ -17,12 +19,18 @@ jobs:
       - name: Installer Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: "20"
 
-      - name: Creer application Capacitor
+      - name: Installer Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "21"
+
+      - name: Creer le projet Capacitor
         run: |
-          mkdir android-app
-          cd android-app
+          mkdir capacitor-app
+          cd capacitor-app
 
           npm init -y
           npm install @capacitor/core @capacitor/cli @capacitor/android
@@ -31,15 +39,23 @@ jobs:
 
           cat > www/index.html <<'EOF'
           <!DOCTYPE html>
-          <html>
+          <html lang="fr">
           <head>
             <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0"
+            >
             <title>Mercedes-Benz</title>
           </head>
+
           <body>
+            <p>Chargement de Mercedes-Benz...</p>
+
             <script>
-              window.location.href = "https://bayaya-devi.github.io/Mercedesbenz/";
+              window.location.replace(
+                "https://bayaya-devi.github.io/Mercedesbenz/"
+              );
             </script>
           </body>
           </html>
@@ -48,15 +64,9 @@ jobs:
           npx cap init MercedesBenz com.bayaya.mercedesbenz --web-dir=www
           npx cap add android
 
-      - name: Installer Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: 21
-
-           - name: Compiler APK
+      - name: Corriger les dependances Kotlin
         run: |
-          cd android-app/android
+          cd capacitor-app/android
 
           cat >> app/build.gradle <<'EOF'
 
@@ -69,11 +79,15 @@ jobs:
           }
           EOF
 
+      - name: Compiler APK
+        run: |
+          cd capacitor-app/android
           chmod +x gradlew
           ./gradlew clean assembleDebug
 
       - name: Sauvegarder APK
         uses: actions/upload-artifact@v4
         with:
-          name: MercedesBenz-Android
-          path: android-app/android/app/build/outputs/apk/debug/app-debug.apk
+          name: MercedesBenz-APK
+          path: capacitor-app/android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
