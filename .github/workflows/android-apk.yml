@@ -1,0 +1,64 @@
+name: Build Android APK
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Recuperer le projet
+        uses: actions/checkout@v4
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Creer application Capacitor
+        run: |
+          mkdir android-app
+          cd android-app
+
+          npm init -y
+          npm install @capacitor/core @capacitor/cli @capacitor/android
+
+          mkdir www
+
+          cat > www/index.html <<'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Mercedes-Benz</title>
+          </head>
+          <body>
+            <script>
+              window.location.href = "https://bayaya-devi.github.io/Mercedesbenz/";
+            </script>
+          </body>
+          </html>
+          EOF
+
+          npx cap init MercedesBenz com.bayaya.mercedesbenz --web-dir=www
+          npx cap add android
+
+      - name: Installer Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Compiler APK
+        run: |
+          cd android-app/android
+          chmod +x gradlew
+          ./gradlew assembleDebug
+
+      - name: Sauvegarder APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: MercedesBenz-Android
+          path: android-app/android/app/build/outputs/apk/debug/app-debug.apk
