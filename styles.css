@@ -36,3 +36,26 @@ body{background:radial-gradient(circle at 82% 12%,#123240 0,transparent 24rem),v
 .model-visual-guide span{max-width:360px;color:#c5dadd;font-size:12px;line-height:1.45}
 .model-info .model-visual-guide+dl{margin-top:19px!important}
 @media(max-width:760px){.models-controls{width:100%;max-width:100%;gap:8px}.models-dots{max-width:calc(100vw - 132px);gap:6px;padding:4px 1px}.models-dots button.model-thumb{flex-basis:62px;width:62px;height:42px}.models-dots button.model-thumb span{font-size:6px}.model-photo-meta{top:30px;left:14px;max-width:calc(100% - 28px);padding:7px 8px}.model-photo-meta span{font-size:7px}.model-visual-guide{margin-top:13px;padding:10px 11px}.model-visual-guide strong{font-size:20px}.model-visual-guide span{font-size:11px}.model-info .model-visual-guide+dl{margin-top:15px!important}}
+
+/* Mur photo — modèles Mercedes-Benz */
+.model-gallery-button{display:inline-flex;align-items:center;gap:8px;margin-left:auto;padding:9px 11px;border:1px solid #8fe8f888;background:#0c242dcc;color:#dffbff;font:9px var(--mono);letter-spacing:.1em;cursor:pointer;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+.model-gallery-button span{font-size:15px;line-height:1;color:#8de9f8}
+.model-gallery-button:hover{transform:translateY(-2px);border-color:#c3f7ff;background:#173b47}
+.models-photo-wall{position:absolute;z-index:6;inset:88px 5vw 20px;display:none;grid-template-rows:auto minmax(0,1fr);gap:18px;padding:4px;background:#08090bf5}
+.models-gallery-open .models-slider,.models-gallery-open .models-controls{opacity:0;visibility:hidden;pointer-events:none}
+.models-gallery-open .models-photo-wall{display:grid;animation:gallery-wall-in .34s cubic-bezier(.2,.8,.2,1) both}
+.models-photo-wall-head{display:flex;align-items:end;justify-content:space-between;gap:20px;padding:0 2px 14px;border-bottom:1px solid #91e9f433}
+.models-photo-wall-head p{margin:0 0 7px;color:#91e9f7;font:9px var(--mono);letter-spacing:.17em}
+.models-photo-wall-head h2{margin:0;color:#f5fbfc;font:500 clamp(25px,3vw,42px)/1 var(--serif);letter-spacing:-.04em}
+.models-photo-wall-close{display:inline-flex;align-items:center;gap:9px;flex:0 0 auto;padding:10px 12px;border:1px solid #b7f1fa88;background:#0d252d;color:#e8fbff;font:9px var(--mono);letter-spacing:.08em;cursor:pointer;transition:transform .2s ease,background .2s ease}
+.models-photo-wall-close:hover{transform:translateX(-3px);background:#194451}
+.models-photo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:2px 3px 18px;scrollbar-width:thin;scrollbar-color:#78deef77 transparent}
+.models-photo-card{position:relative;min-width:0;min-height:170px;padding:0;overflow:hidden;border:1px solid #b8f0f44d;background:#13272e;color:#fff;cursor:pointer;isolation:isolate}
+.models-photo-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 34%,#02080ad4);pointer-events:none}
+.models-photo-card img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.05);transition:transform .5s cubic-bezier(.2,.7,.2,1),filter .35s ease}
+.models-photo-card span{position:absolute;z-index:1;right:0;bottom:0;left:0;display:flex;align-items:baseline;gap:8px;padding:10px;color:#f7ffff;font:10px var(--sans);text-align:left}
+.models-photo-card span b{color:#8ee9f8;font:9px var(--mono);letter-spacing:.08em}
+.models-photo-card:hover img{transform:scale(1.075);filter:saturate(1.12) contrast(1.06)}
+.models-photo-card:hover{border-color:#b9f6ff;box-shadow:0 10px 22px #0008}
+@keyframes gallery-wall-in{from{opacity:0;transform:translateY(12px);filter:blur(5px)}to{opacity:1;transform:none;filter:none}}
+@media(max-width:760px){.models-head{gap:9px}.model-gallery-button{padding:8px 9px;font-size:8px}.model-gallery-button span{font-size:13px}.models-photo-wall{inset:78px 18px 16px;gap:12px}.models-photo-wall-head{align-items:flex-start;gap:10px;padding-bottom:10px}.models-photo-wall-head h2{font-size:28px}.models-photo-wall-head p{font-size:8px}.models-photo-wall-close{padding:8px;font-size:8px}.models-photo-wall-close span{display:none}.models-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding-bottom:12px}.models-photo-card{min-height:146px}.models-photo-card span{padding:8px;font-size:9px}}
